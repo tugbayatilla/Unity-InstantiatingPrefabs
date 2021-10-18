@@ -9,7 +9,11 @@ public class WreckOnCollision : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter()
     {
+		Debug.Log("OnCollisionEnter");
+
         Destroy(gameObject);
-        Instantiate(wreckedVersion,transform.position,transform.rotation);
+		if (wreckedVersion) { 
+			Instantiate(wreckedVersion,transform.position,transform.rotation);
+		}
     }
 }
